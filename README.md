@@ -39,3 +39,38 @@ i) Location of the input file
 ii) Location to which the output XML file to be written
 
 Sample contents in input file:
+vhigh,vhigh,2,2,small,low,unacc
+vhigh,vhigh,2,2,small,med,unacc
+vhigh,vhigh,2,2,small,high,unacc
+vhigh,vhigh,2,2,med,low,unacc
+vhigh,vhigh,2,2,med,med,unacc
+
+example statements to use the program:
+py 02_DecisionTree_ID3.py inputfile.csv output.xml
+
+
+3. Single Perceptron using Delta rule
+
+The output is a tsv file, which contains exactly two rows after 100 iterations (per
+variant):
+i) The first row contains the tabular separated values for the error of each iteration
+(starting from iteration 0) with the constant learning rate.
+ii) The second row follows the same format, but with the annealing learning rate
+
+example statements to use the program:
+py 03_Perceptron.py inputfile.csv outputfile.tsv
+
+4. 2 class Naive Bayes classifier 
+
+The program implements a 2-class Naive Bayes algorithm with an apriori decision
+rule using a multinomial estimation for the classes and a gaussian estimation for the
+attributes. The output of the program is a single tsv file per data set, which contains a row for each class:
+mean and variance and the probability
+The last (third) row contains the absolute number of misclassications for the data.
+
+Program takes two inputs:
+i) Location of the input file
+ii) Location to which the output file to be written
+
+example statements to use the program:
+py 04_NaiveBayes_Classifier.py inputfile.tsv output.tsv
